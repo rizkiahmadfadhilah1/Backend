@@ -1,6 +1,6 @@
 const express = require ('express');
 const route = express.Router()
-const TodoRoutes = require ("./Todo-route")
+const todoRoutes = require ("./Todo-route")
 
 
 route.get ("/", (req,res) => {
@@ -9,6 +9,6 @@ route.get ("/", (req,res) => {
     })
 })
 
-route.use("/todos", TodoRoutes)
+route.use("/todos", todoRoutes)
 
 module.exports = route
