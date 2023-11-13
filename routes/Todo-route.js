@@ -1,15 +1,12 @@
-const express = require ('express');
+const express = require("express");
+const bcrypt = require('bcrypt')
+const User = require('../models/users');
+const { getAllTodo, getTodoById, createTodo } = require("../controllers/todo_controller");
+
 const route = express.Router()
 
-const Todo = require("../models/Todos");
-const { getAllTodo, getTodoById, addTodo, editTodoById, deleteTodoById } = require('../controllers/todo-controller');
-
-route.get ('/', getAllTodo)
-
-
-route.get ('/:id', getTodoById)
-route.post ('/', addTodo)
-route.put ('/:id', editTodoById)
-route.delete ('/:id', deleteTodoById)
+route.get('/', getAllTodo)
+route.get('/:id', getTodoById)
+route.post('/', createTodo)
 
 module.exports = route
